@@ -1,11 +1,11 @@
-# e-Fair: An ε-Budget Information-Theoretic Fairness Framework
+# ε-Fair: An ε-Budget Information-Theoretic Fairness Framework
 
-**e-Fair** is a practical and rigorous framework for algorithmic fairness that treats fairness as an **explicit information budget**.  
+**ε-Fair** is a practical and rigorous framework for algorithmic fairness that treats fairness as an **explicit information budget**.  
 Instead of relying on ad-hoc penalties, e-Fair constrains the mutual information leakage between protected attributes **A** and predictions **Ŷ**:
 
-\[
+$$
 I(A;\hat Y) \;\leq\; \epsilon
-\]
+$$
 
 This gives practitioners a clear **budget ε** to spend on fairness, while still optimizing utility.
 
