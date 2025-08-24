@@ -4,7 +4,7 @@
 Instead of relying on ad-hoc penalties, e-Fair constrains the mutual information leakage between protected attributes **A** and predictions **Ŷ**:
 
 $$
-I(A;\hat Y) \;\leq\; \epsilon
+I(A;\hat Y) \leq \epsilon
 $$
 
 This gives practitioners a clear **budget ε** to spend on fairness, while still optimizing utility.
@@ -64,3 +64,11 @@ This gives practitioners a clear **budget ε** to spend on fairness, while still
    git clone https://github.com/yourusername/e-fair.git
    cd e-fair
    pip install -r requirements.txt
+
+If you use e-Fair, please cite:
+@misc{efair2025,
+  title  = {e-Fair: An ε-Budget Information-Theoretic Fairness Framework},
+  author = {Agus Sudjianto},
+  year   = {2025},
+  url    = {https://github.com/asudjianto-xml/e-Fair}
+}
