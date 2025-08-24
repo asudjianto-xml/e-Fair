@@ -85,8 +85,7 @@ run_demo.experiment_estimators()
 ---
 
 ## What the demos show
-
-1. **Utility–Fairness Pareto frontier**  
+ 
    Sweep a fairness knob; plot AUC vs observed DP and **AUC vs certified DP upper**. The certified curve **upper-envelopes** the observed—governance-ready.
 
 2. **Representation budget propagation**  
