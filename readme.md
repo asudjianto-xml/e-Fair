@@ -66,9 +66,10 @@ This gives practitioners a clear **budget ε** to spend on fairness, while still
    pip install -r requirements.txt
 
 If you use e-Fair, please cite:
-@misc{efair2025,
-  title  = {e-Fair: An ε-Budget Information-Theoretic Fairness Framework},
-  author = {Agus Sudjianto},
-  year   = {2025},
-  url    = {https://github.com/asudjianto-xml/e-Fair}
+
+@misc{efair2025, \\
+  title  = {e-Fair: An ε-Budget Information-Theoretic Fairness Framework},\\
+  author = {Agus Sudjianto}, \\
+  year   = {2025}, \\
+  url    = {https://github.com/asudjianto-xml/e-Fair} \\
 }
