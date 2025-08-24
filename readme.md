@@ -90,7 +90,7 @@ run_demo.experiment_estimators()
    Sweep a fairness knob; plot AUC vs observed DP and **AUC vs certified DP upper**. The certified curve **upper-envelopes** the observed—governance-ready.
 
 2. **Representation budget propagation**  
-   Tighten \(I(A;Z)\) (CLUB upper) → **monotone** decreases in DP/EO; AUC stays steady; certified bounds track and upper-envelope observed gaps.
+   Tighten $$I(A;Z)$$ (CLUB upper) → **monotone** decreases in DP/EO; AUC stays steady; certified bounds track and upper-envelope observed gaps.
 
 3. **Bias drift monitoring**  
    Track $$\widehat I_t(A;\hat Y)$$ with **bootstrap CIs**; convert to a certified DP bound; alert when the CI upper **exceeds budget**.
