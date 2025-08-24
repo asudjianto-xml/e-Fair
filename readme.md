@@ -14,8 +14,8 @@
 
 ## Why ϵ-Fair?
 
-- **One language for many notions.** DP/EO/CAL are unified by bounding the mutual information (MI) between the protected attribute \(A\) and the model’s **prediction** \(\hat Y\), **score** \(S\), or **representation** \(Z\).
-- **Budgets → targets.** If you enforce \(I(A;\hat Y)\le \epsilon\), you immediately get certified bounds (with prior-aware constants), e.g.
+- **One language for many notions.** DP/EO/CAL are unified by bounding the mutual information (MI) between the protected attribute $$A$$ and the model’s **prediction** $$\hat Y$$, **score** $$S$$, or **representation** $$Z$$.
+- **Budgets → targets.** If you enforce $$I(A;\hat Y)\le \epsilon$$, you immediately get certified bounds (with prior-aware constants), e.g.
   $$
   \mathrm{DP}\ \le\ \sqrt{\tfrac{I(A;\hat Y)}{2\,\pi_0\pi_1}},\qquad
   \mathrm{EO}\ \le\ \sqrt{\tfrac{I(A;\hat Y\mid Y{=}1)}{2\,\pi_0^+\pi_1^+}}.
@@ -28,7 +28,7 @@
 
 - **`run_demo.py`** – Reproduces all figures/CSVs:
   - Utility–Fairness **Pareto** frontier (observed & **certified** DP)
-  - **Representation budget** propagation \(I(A;Z)\ \rightarrow\) DP/EO
+  - **Representation budget** propagation $$I(A;Z)\ \rightarrow$$ DP/EO
   - **Drift monitoring** with MI time-series + bootstrap CIs
   - **Estimator study** (InfoNCE lower / plug-in / CLUB upper)
 - **`outputs/`** – Auto-generated PNGs/CSVs (created when you run the script).
@@ -78,9 +78,9 @@ run_demo.experiment_estimators()
 
 ## The core idea (2 minutes)
 
-- **Controlled dependence.** Fairness violations are upper-bounded by how much information about \(A\) the system leaks through \(\hat Y\) or \(S\).
-- **Budgets in MI, targets in metrics.** Pick \(\epsilon\) in MI-space; convert to **certified DP/EO/CAL** bounds via sharp, prior-aware inequalities.
-- **Representation budgets propagate.** If \(\hat Y=g(Z)\), then \(I(A;\hat Y)\le I(A;Z)\). A budget on \(I(A;Z)\) is a budget on prediction-level gaps.
+- **Controlled dependence.** Fairness violations are upper-bounded by how much information about $$A$$ the system leaks through $$\hat Y$$ or \(S\).
+- **Budgets in MI, targets in metrics.** Pick $$\epsilon$$ in MI-space; convert to **certified DP/EO/CAL** bounds via sharp, prior-aware inequalities.
+- **Representation budgets propagate.** If $$\hat Y=g(Z)$$, then $$I(A;\hat Y)\le I(A;Z)$$. A budget on $$I(A;Z)$$ is a budget on prediction-level gaps.
 
 ---
 
@@ -96,16 +96,16 @@ run_demo.experiment_estimators()
    Track $$\widehat I_t(A;\hat Y)$$ with **bootstrap CIs**; convert to a certified DP bound; alert when the CI upper **exceeds budget**.
 
 4. **Estimator study (diagnostics)**  
-   InfoNCE (lower) / CLUB (upper) bracket \(I(A;Z)\); plug-in MI on \((A,\hat Y)\) is exact for 2×2 tables. Certification uses **uppers or exact** estimators.
+   InfoNCE (lower) / CLUB (upper) bracket $$I(A;Z)$$; plug-in MI on $$(A,\hat Y)$$ is exact for 2×2 tables. Certification uses **uppers or exact** estimators.
 
 ---
 
 ## Templates for practitioners 
 
 ### Logistic Regression (LR)
-- **Granularity control:** supervised binning caps \(H(S)\) and leakage capacity.  
+- **Granularity control:** supervised binning caps $$H(S)$$ and leakage capacity.  
 - **Budgeted thresholding:** on validation, scan thresholds and keep only those with  
-  \(\widehat I(A;\hat Y_t)\le \epsilon_{\mathrm{DP}}\) (and \(\widehat I(A;\hat Y_t\mid Y{=}1)\le \epsilon_{\mathrm{EO}}\)); choose the best utility within the **feasible** set.  
+  $$\widehat I(A;\hat Y_t)\le \epsilon_{\mathrm{DP}}$$ (and $$\widehat I(A;\hat Y_t\mid Y{=}1)\le \epsilon_{\mathrm{EO}}$$); choose the best utility within the **feasible** set.  
 - **Certify & monitor:** plug-in MI on test + bootstrap CIs → **certified** DP/EO bounds.
 
 ### Gradient-Boosted Decision Trees (GBDT)
@@ -114,8 +114,8 @@ run_demo.experiment_estimators()
 - **Certify & monitor:** as above.
 
 ### Example using Neural Networks
-> In both cases, “budget selection” is just choosing \(\epsilon\) from a policy target via  
-> \(\epsilon_{\mathrm{DP}}=2\,\pi_0\pi_1\,\tau_{\mathrm{DP}}^2\) (and analogously for EO).
+> In all cases, “budget selection” is just choosing $$\epsilon$$ from a policy target via  
+> $$\epsilon_{\mathrm{DP}}=2\,\pi_0\pi_1\,\tau_{\mathrm{DP}}^2$$ (and analogously for EO).
 
 ---
 
