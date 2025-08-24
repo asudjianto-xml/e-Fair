@@ -18,8 +18,8 @@
 - **Budgets → targets.** If you enforce $$I(A;\hat Y)\le \epsilon$$, you immediately get certified bounds (with prior-aware constants), e.g.
 $$
 \begin{align}
-\mathrm{DP} & \le \sqrt{\frac{I(A;\hat{Y})}{2\pi_0\pi_1}} \\
-\mathrm{EO} & \le \sqrt{\frac{I(A;\hat{Y} \mid Y = 1)}{2\pi_0^+\pi_1^+}}
+\mathrm{DP} &\le \sqrt{\frac{I(A;\hat{Y})}{2\pi_0\pi_1}} \\
+\mathrm{EO} &\le \sqrt{\frac{I(A;\hat{Y} \mid Y = 1)}{2\pi_0^+\pi_1^+}}
 \end{align}
 $$
 
