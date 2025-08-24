@@ -4,7 +4,7 @@
 
 - **Applied paper (companion to this repo):**  
   *ϵ-Fair: Unifying Algorithmic Fairness via Information Budgets*  
-  https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5403882
+  https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5403916
 
 - **Theory paper (derivations & bounds):**  
   *Theoretical Foundations of Algorithmic Fairness: A Unified Framework Through Pinsker’s Inequality*  
