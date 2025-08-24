@@ -79,7 +79,7 @@ run_demo.experiment_estimators()
 ## The core idea (2 minutes)
 
 - **Controlled dependence.** Fairness violations are upper-bounded by how much information about \(A\) the system leaks through \(\hat Y\) or \(S\).
-- **Budgets in MI, targets in metrics.** Pick $$\epsilon$$ in MI-space; convert to **certified DP/EO/CAL** bounds via sharp, prior-aware inequalities.
+- **Budgets in MI, targets in metrics.** Pick \(\epsilon\) in MI-space; convert to **certified DP/EO/CAL** bounds via sharp, prior-aware inequalities.
 - **Representation budgets propagate.** If \(\hat Y=g(Z)\), then \(I(A;\hat Y)\le I(A;Z)\). A budget on \(I(A;Z)\) is a budget on prediction-level gaps.
 
 ---
@@ -90,7 +90,7 @@ run_demo.experiment_estimators()
    Sweep a fairness knob; plot AUC vs observed DP and **AUC vs certified DP upper**. The certified curve **upper-envelopes** the observed—governance-ready.
 
 2. **Representation budget propagation**  
-   Tighten $$I(A;Z)$$ (CLUB upper) → **monotone** decreases in DP/EO; AUC stays steady; certified bounds track and upper-envelope observed gaps.
+   Tighten \(I(A;Z)\) (CLUB upper) → **monotone** decreases in DP/EO; AUC stays steady; certified bounds track and upper-envelope observed gaps.
 
 3. **Bias drift monitoring**  
    Track $$\widehat I_t(A;\hat Y)$$ with **bootstrap CIs**; convert to a certified DP bound; alert when the CI upper **exceeds budget**.
